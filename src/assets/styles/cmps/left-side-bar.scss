@@ -3,11 +3,11 @@
     padding: 0;
     margin: 0;
     color: rgb(0, 0, 0);
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-family: $fontFamily;
+    font-size: $fontSize16;
     line-height: 20px;
     text-decoration: none solid rgb(0, 0, 0);
-    font-weight: 400px;
+    font-weight: $fontWeight400;
     background-color: (0, 0, 0, 0.016);
 
 }
@@ -15,7 +15,7 @@
 .wide-side-bar-container {
     width: 244px;
     height: 100vh;
-    border-right: 1px solid rgb(215, 215, 215);
+    border-right: $rightBorder;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,7 +31,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
 }
 
 .side-bar-ul {

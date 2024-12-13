@@ -47,9 +47,9 @@
     padding: 12px 14px 36px 24px;
     margin: 8px;
     color: black;
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: $fontFamily;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: $fontWeight600;
 }
 
 .search-box {
@@ -60,10 +60,6 @@
     min-width: 125px;
     width: 100%;
     border-bottom: 0.5px solid rgb(219, 219, 219);
-    /* background-color: wheat;
-    padding:3px 0 3px 0; */
-
-
 }
 
 .search-input {
@@ -87,10 +83,14 @@
 .search-bar-users-ul{
 
     align-items: flex-start;
-    padding: 10px 0 10px 0;
-    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+    // margin-left: 10px;
     list-style-type: none;
     width: 100%;
+}
+
+.search-bar-users-li{
+    margin-top: 10px;
 }
 
 .search-bar-user-details{
@@ -106,9 +106,9 @@
     justify-content: flex-start;
 
     color: black;
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: $fontFamily;
+    font-size: $fontSize14;
+    font-weight: $fontWeight600;
     height: fit-content;
 
 }
@@ -118,8 +118,8 @@
     align-items: center;
     justify-content: flex-start;
     color: rgb(115, 115, 115);
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: $fontFamily;
+    font-size: $fontSize14;
+    font-weight: $fontWeight400;
     height: fit-content;
 }

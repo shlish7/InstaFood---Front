@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import '../assets/styles/cmps/carousel.css'
 import Arrow from '../assets/svg/carousel-arrow.svg?react'
 
 export function Carousel({ feedItem, onDoubleClicked, isImgDoubleClicked, fullScreen }) {

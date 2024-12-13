@@ -5,10 +5,7 @@
   align-items: center;
   text-align: center;
   max-height: calc(100vh - 40px);
-  /* max-height: 920; */
-  /* max-width: 762px;     */
-  /* max-width: 900px; */
-  max-width: (100% - 64px - 64px);
+  max-width: calc(100% - 64px - 64px);
   width: 80%;
   aspect-ratio: 1;
   position: fixed;
@@ -86,7 +83,7 @@
 }
 
 .full-screen-comments-user-name{
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: $fontFamily;
+  font-size: $fontSize14;
+  font-weight: $fontWeight600;
 }

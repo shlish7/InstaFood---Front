@@ -1,3 +1,7 @@
+*{
+    font-family:$fontFamily;
+
+}
 .user-info {
     display: flex;
     align-items: center;
@@ -5,9 +9,8 @@
 }
 
 .switch-user-btn {
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: $fontSize12;
+    font-weight: $fontWeight600;
     height: 18px;
     color: rgb(0, 149, 246);
     cursor: pointer;
@@ -20,16 +23,14 @@
 }
 
 .user-info-full-name {
-    font-family: -apple-system,"system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif ;
-    font-size: 14px; 
-    font-weight: 600; 
+    font-size: $fontSize14; 
+    font-weight: $fontWeight600; 
     height: 18px ;
     line-height: 18px;
 }
 
 .user-info-first-name {
     color: rgb(115, 115, 115);
-    font-family: -apple-system,"system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif ;
     font-size: 14px ;
-    font-weight: 400;
+    font-weight: $fontWeight400;
 }

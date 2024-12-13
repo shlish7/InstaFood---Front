@@ -21,7 +21,7 @@
   object-fit: cover;
 }
  .username {
-  font-size: 12px;
+  font-size: $fontSize12;
   text-align: center;
   margin-top: 5px;
   color: #000;

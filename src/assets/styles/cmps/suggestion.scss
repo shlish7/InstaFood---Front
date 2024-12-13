@@ -2,15 +2,17 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family:$fontFamily;
+    font-size: $fontSize14;
+    font-weight: $fontWeight600;
+
 }
 .suggestion-users{
     margin-top: 20px;
 }
 .suggestion-span{
     color: rgb(115, 115, 115);
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $fontSize14;
 }
 
 .suggestion-ul{
@@ -35,30 +37,15 @@
 
 }
 
-/* .suggest-follow-btn{
-    color:rgb(0, 149, 246);
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600 ;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-
-} */
-
 .suggestion-username{
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $fontSize14;
     color: black;
 
 }
 
 .suggest-follow-btn {
     color:rgb(0, 149, 246);
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600 ;
+    font-size: $fontSize12;
     background-color: transparent;
     padding: 0;
     margin: 0;    transition: color 0.3s ease;
@@ -66,9 +53,7 @@
 
 .suggest-follow-btn.following {
     color: black;
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600 ;
+    font-size: $fontSize12;
     background-color: transparent;
     padding: 0;
     margin: 0;

@@ -15,19 +15,44 @@
 // Views
 @import "views/AboutUs";
 // @import "views/HomePage";
-@import "views/CarIndex";
-@import "views/ReviewIndex";
-@import "views/UserDetails";
-@import "views/BoardIndex";
-@import "views/BoardDetails";
-@import "views/TaskDetails";
+
 
 @import "./pages/homePage.scss";
+
+//Pages
+@import "pages/feed-item-full-screen";
+@import "pages/login-page";
+@import "pages/profile";
+@import "pages/explore";
+
+
 
 // Components
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
+@import "cmps/left-side-bar";
+@import "cmps/right-side-bar";
+@import "cmps/follows-lists";
+@import "cmps/suggestion";
+@import "cmps/carousel";
+@import "cmps/buttons-view";
+@import "cmps/create-post";
+@import "cmps/likes-list";
+@import "cmps/search-bar";
+
+// Comments
+@import "cmps/comments/comments-index";
+@import "cmps/comments/comments-view";
+@import "cmps/comments/comments-preview";
+
+// Profile
+@import "cmps/profile/profile-body";
+
+//feed
+@import "cmps/feed/feed-item";
+
+
 
 
 

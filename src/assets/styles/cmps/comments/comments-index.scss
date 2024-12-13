@@ -1,9 +1,12 @@
-.comments-list-section{
-}
+*{
+    font-family: $fontFamily;
+    font-size: $fontSize14;
+    font-weight: $fontWeight400;
 
+
+}
 .comments-index{
     max-height: 920;
-    /* max-width: 500px; */
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid rgb(239, 239, 239);
@@ -34,10 +37,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-family:-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color:black;
-    font-weight: 600;
+    font-weight: $fontWeight600;
 
 }
 
@@ -46,10 +47,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    font-family:-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color:black;
-    font-weight: 400;
     height: 20px;
 }
 

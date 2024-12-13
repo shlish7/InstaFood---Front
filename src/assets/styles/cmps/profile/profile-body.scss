@@ -1,3 +1,7 @@
+*{
+  
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -29,7 +33,7 @@
 
 .custom-tab {
   color: rgb(115, 115, 115) !important; 
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-family: $fontFamily;
   font-size: 12px !important;
   font-weight: 600 !important;
   padding: 12px 16px !important; /* Adjust padding for a balanced look */

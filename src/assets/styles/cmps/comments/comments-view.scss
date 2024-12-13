@@ -1,3 +1,11 @@
+*{
+    font-family: $fontFamily;
+    font-size: $fontSize14;
+    font-weight: $fontWeight600;
+    color: black;
+
+}
+
 .home-add-comment {
     /* max-height: 80px; */
     height: 100%;
@@ -10,8 +18,7 @@
 
     margin-top: 10px;
     resize: none;
-    font-family:-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+
 }
 
 .home-add-comment-full-screen{
@@ -56,9 +63,6 @@
 }
 
 .post-comment-btn {
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
     color: rgb(0, 149, 246);
     background-color: white;
     width: fit-content;
@@ -85,17 +89,9 @@
     padding: 5px 0;
 }
 
-.new-comment-user-name {
-    color: black;
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-}
-
 .new-comment {
-    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+
+    font-weight: $fontWeight400;
 }
 
 .new-comment-details{
