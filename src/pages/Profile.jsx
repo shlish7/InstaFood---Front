@@ -34,6 +34,9 @@ export function Profile() {
     navigate(`/p/${id}`)
   }
 
+  function onUserUnfollowed(updatedUser){
+    setUser(updatedUser)
+  }
     return (<>
         <section className='profile-page'>
             <aside className="profie-left-side-bar">
@@ -41,7 +44,7 @@ export function Profile() {
             </aside>
             <main className='profile-main-side'>
               <section className="profile-main-container">      
-                {user && <ProfileHeader feedItems={feedItems} user={user}/>}
+                {user && <ProfileHeader feedItems={feedItems} user={user} onUserUnfollowed={onUserUnfollowed}/>}
                 {user && <ProfileBody feedItems={feedItems} user={user} onOpenFeedItem={onOpenFeedItem}/>}
               </section>
             </main>

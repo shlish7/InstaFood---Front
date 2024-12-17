@@ -35,13 +35,14 @@ export default function Suggestion() {
                 [userId]: prevStates[userId] === 'Follow' ? 'Following' : 'Follow'
             }))
     
-            console.log('Clicked userId:', userId); // Log the clicked user's ID const 
-            const isFollowing = loggedinUser?.following.includes(userId);
-            console.log('Is logged-in user following this user?', isFollowing);
+            // console.log('Clicked userId:', userId); // Log the clicked user's ID const 
+            const isFollowing = loggedinUser?.following.includes(userId)
+            console.log('Is logged-in user following this user?', isFollowing)
+            console.log('...loggedinUser.following',...loggedinUser.following);
             const updatedFollowing = isFollowing ? null
                 : [...loggedinUser.following, userId]; // Add userId if not following 
                 console.log('userId',userId);
-            console.log('updatedFollowing', updatedFollowing);
+            console.log('updatedFollowing', ...updatedFollowing);
             await updateUser({ ...loggedinUser, following: updatedFollowing });
         }
         catch (err) {

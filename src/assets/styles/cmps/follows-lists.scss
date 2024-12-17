@@ -15,15 +15,16 @@
     inset: 0;
     margin: auto;
     box-shadow:
-        0 0 0 100vmax rgba(0, 0, 0, 0.16);
+        0 0 0 100vmax rgba(0, 0, 0, 0.5);
     padding: 0;
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
     z-index: 6;
     border-radius: 12px;
-    max-height: calc(100% - 40px);
+    // max-height: calc(100% - 40px);
+    height: 400px;
     max-width: 400px;
-    min-width: 260px;
+    // min-width: 260px;
 }
 
 .follows-modal-section {
@@ -169,6 +170,11 @@
     width: 100%;
 
 }
+
+.follow-list-user-name:hover {
+    cursor: pointer;
+}
+
 
 .follow-list-full-name {
     display: flex;

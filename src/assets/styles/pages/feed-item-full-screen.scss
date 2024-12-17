@@ -72,6 +72,9 @@
   width: calc(100% - 28px);
 }
 
+.comments-user-name-full-screen:hover {
+  cursor: pointer;
+}
 
 .scrollable-comments {
   flex-grow: 1;
@@ -86,4 +89,9 @@
   font-family: $fontFamily;
   font-size: $fontSize14;
   font-weight: $fontWeight600;
+}
+
+.comment-list-avatar:hover{
+  cursor: pointer;
+
 }

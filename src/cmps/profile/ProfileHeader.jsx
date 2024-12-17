@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ImageAvatars from "../ImageAvatars";
 import FollowsList from "./FollowsList";
 
-export default function ProfileHeader({ feedItems, user }) {
+export default function ProfileHeader({ feedItems, user, onUserUnfollowed }) {
 
   const [profileFeedItems, setProfileFeedItems] = useState()
   const [displayFollowersModal, setDisplayFollowersModal] = useState(false)
@@ -12,7 +12,26 @@ export default function ProfileHeader({ feedItems, user }) {
   useEffect(() => {
     const userFeedItemsCount = feedItems?.filter(feedItem => feedItem.owner._id === user._id).length;
     setProfileFeedItems(userFeedItemsCount)
-  }, []);
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        console.log('displayFollowersModal',displayFollowersModal);
+        displayFollowersModal ? setDisplayFollowersModal(false) : null
+        displayFollowingModal ? setDisplayFollowingModal(false) : null
+      }
+      if (event.key === 'Enter' && !event.shiftKey) {
+        displayFollowersModal ? setDisplayFollowersModal(false) : null
+        displayFollowingModal ? setDisplayFollowingModal(false) : null 
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [displayFollowersModal, displayFollowingModal]);
+
+
 
   function onCloseModal() {
     setDisplayFollowersModal(false)
@@ -54,7 +73,7 @@ export default function ProfileHeader({ feedItems, user }) {
               </span>
               <span>Followers</span>
             </section>
-            {displayFollowersModal && <FollowsList user={user} onCloseModal={onCloseModal} followType={'Followers'} />}
+            {displayFollowersModal && <FollowsList user={user} onCloseModal={onCloseModal} followType={'Followers'} onUserUnfollowed={onUserUnfollowed} />}
 
             <section className="profile-follows" onClick={onOpenFollowingModal}>
               <span className="profile-counts">
@@ -62,7 +81,7 @@ export default function ProfileHeader({ feedItems, user }) {
               </span>
               <span>Following</span>
             </section>
-            {displayFollowingModal && <FollowsList user={user} onCloseModal={onCloseModal} followType={'Following'} />}
+            {displayFollowingModal && <FollowsList user={user} onCloseModal={onCloseModal} followType={'Following'} onUserUnfollowed={onUserUnfollowed}/>}
           </section>
         </section>
       </header>
