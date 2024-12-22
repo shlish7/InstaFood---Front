@@ -18,6 +18,7 @@
 
 
 @import "./pages/homePage.scss";
+@import "./pages/instafood-app.scss";
 
 //Pages
 @import "pages/feed-item-full-screen";
@@ -45,6 +46,7 @@
 @import "cmps/comments/comments-index";
 @import "cmps/comments/comments-view";
 @import "cmps/comments/comments-preview";
+@import "cmps/comments/navigation-bar";
 
 // Profile
 @import "cmps/profile/profile-body";

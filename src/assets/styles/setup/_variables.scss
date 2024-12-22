@@ -11,6 +11,8 @@ $gray1: #ddd;
 $gray2: #aaa;
 $gray3: #777;
 $gray4: #333;
+$greyClr:rgb(115, 115, 115);
+
 
 //Borders 
 $bottomBorder: 1px solid rgb(219, 219, 219);
@@ -26,7 +28,10 @@ $fontSize16: 16px;
 $fontWeight400:400;
 $fontWeight600:600;
 
+//Navigation
 
+$wideNav: 335px;
+$narrowNav: 48px;
 
 // Breakpoints
 $mobile-breakpoint: 460px;

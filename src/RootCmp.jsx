@@ -5,13 +5,14 @@ import { FeedItemFullScreen } from "./pages/FeedItemFullScreen.jsx";
 import { LoginPage } from "./pages/LoginPage.jsx";
 import Explore from "./pages/Explore.jsx";
 import { ChatApp } from "./pages/Chat.jsx";
+import AppNavigation from "./cmps/AppNavigation.jsx";
 
 export function RootCmp() {
   return (
-    <div className="instagram-app">
+    <div className="instafood-app">
       {/* <AppHeader /> */}
-      <main>
-
+      <AppNavigation class="navigation"/>
+      <main class="main-page">
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route path="/p/:pId?" element={<FeedItemFullScreen />} />

@@ -39,9 +39,9 @@ export function Profile() {
   }
     return (<>
         <section className='profile-page'>
-            <aside className="profie-left-side-bar">
+            {/* <aside className="profie-left-side-bar">
                 <LeftSideBar />
-            </aside>
+            </aside> */}
             <main className='profile-main-side'>
               <section className="profile-main-container">      
                 {user && <ProfileHeader feedItems={feedItems} user={user} onUserUnfollowed={onUserUnfollowed}/>}

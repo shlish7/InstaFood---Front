@@ -4,27 +4,20 @@
     margin: 0;
 }
 
-.explore-page {
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    grid-template-areas:
-        "side-bar main"
-        "side-bar main";
-    min-height: 100vh;
-    width: 100vw;
-    margin-left: 0;
-    padding-left: 0;
-}
 
-.explore-page-main{
+.explore-page {
     display: flex;
     justify-content: center;
+    height: 100vh;
+    width:100%;
+
 }
 
 
 .explore-container {
-    padding: 20px;
-    width: 80%;
+    margin-top: 40px;
+    min-width: 60%;
+    max-width: 963px;
 }
 
 .explore-ul {

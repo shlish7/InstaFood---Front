@@ -24,10 +24,6 @@ export default function Explore() {
 
     return (
         <section className='explore-page'>
-            <aside className="profie-left-side-bar">
-                <LeftSideBar />
-            </aside>
-            <main className='explore-page-main'>
                 <div className='explore-container'>
                     <ul className='explore-ul'>
                         {feedItems?.map((item, idx) =>
@@ -57,7 +53,6 @@ export default function Explore() {
                         )}
                     </ul>
                 </div>
-            </main>
         </section>
     );
 }

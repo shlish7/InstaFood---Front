@@ -31,14 +31,10 @@ export function HomePage() {
   }
 
   return (
-    <section className="instagram-home-page">
+    <section className="instafood-home-page">
       <header className="home-header">
         <AvatarsStoryView className="avatarr-story-view" />
       </header>
-
-      <aside className="home-left-side-bar">
-        <LeftSideBar />
-      </aside>
 
       <main className="home-feed">
         {feedItems.map(feedItem => (
