@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { socketService, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_TOPIC } from '../services/socket.service'
 import ChatIndex from '../cmps/Chat/ChatIndex'
 import {ChatMessagesDetails} from '../cmps/Chat/ChatMessagesDetails'
-import { LeftSideBar } from '../cmps/LeftSideBar.jsx';
 
 export function ChatApp() {
     const [msg, setMsg] = useState({ txt: '' })
@@ -59,7 +58,6 @@ export function ChatApp() {
 
     return (
         <div className='chat-page'> 
-        <LeftSideBar chat ={true}/>
         <section className="chat">
             <h2>Lets Chat about {topic}</h2>
 

@@ -1,4 +1,3 @@
-import { LeftSideBar } from '../cmps/LeftSideBar.jsx'
 import ProfileHeader from '../cmps/profile/ProfileHeader.jsx';
 import ProfileBody from '../cmps/profile/ProfileBody.jsx';
 import { loadFeedItems } from '../store/feedItem.actions.js';
@@ -15,7 +14,6 @@ export function Profile() {
 
     useEffect(() => {
       loadFeedItems()
-    
     }, [])
 
     useEffect(() => {
@@ -39,9 +37,6 @@ export function Profile() {
   }
     return (<>
         <section className='profile-page'>
-            {/* <aside className="profie-left-side-bar">
-                <LeftSideBar />
-            </aside> */}
             <main className='profile-main-side'>
               <section className="profile-main-container">      
                 {user && <ProfileHeader feedItems={feedItems} user={user} onUserUnfollowed={onUserUnfollowed}/>}

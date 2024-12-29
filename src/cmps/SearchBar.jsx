@@ -12,6 +12,7 @@ export function SearchBar() {
     const [displayIcon, setDisplayIcon] = useState(true)
     const [searchTxt, setSearchTxt] = useState('')
     const users = useSelector(storeState => storeState.userModule.users)
+    console.log('users',users);
     const [ filterToEdit, setFilterToEdit ] = useState(userService.getDefaultFilter())
     const [filteredUsers, setFilteredUsers] = useState(users)
 

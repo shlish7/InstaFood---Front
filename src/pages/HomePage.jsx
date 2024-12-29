@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { LeftSideBar } from "../cmps/LeftSideBar";
 import { Outlet, useNavigate } from "react-router-dom";
 import AvatarsStoryView from "../cmps/Story/AvatarsStoryView";
 import { FeedItem } from "../cmps/FeedItem/FeedItem";

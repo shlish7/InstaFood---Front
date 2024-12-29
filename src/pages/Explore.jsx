@@ -4,7 +4,6 @@ import { loadFeedItems } from '../store/feedItem.actions.js';
 import WhiteLikeIcon from '../assets/svg/white-like.svg?react';
 import BlackCommentIcon from '../assets/svg/black-comment.svg?react';
 import { useNavigate } from 'react-router';
-import { LeftSideBar } from '../cmps/LeftSideBar.jsx';
 
 export default function Explore() {
     const navigate = useNavigate()
