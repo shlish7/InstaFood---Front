@@ -12,6 +12,9 @@ button {
     cursor: pointer;
 }
 
+input:focus {
+    outline: none;
+}
 // ::selection {
 //     background-color: $clr1;
 //     color: $clr6;

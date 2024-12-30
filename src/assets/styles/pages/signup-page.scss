@@ -1,19 +1,13 @@
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-page{
+.signup-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap:10px;
+    gap: 10px;
 }
 
-.login-section {
+.signup-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,62 +16,73 @@ main {
     width: 348px;
 }
 
-.login-user-name,
-.login-password {
+.signup-instafood-logo {
+    margin-bottom: 40px;
+}
+
+.signup-email,
+.signup-user-name,
+.signup-full-name,
+.signup-password {
     width: 266px;
     height: 33px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding-left: 10px;
-    font-size: $fontSize14;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-weight: normal;
+    font-size: $fontSize12;
+    font-weight: 400;
+    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: rgb(245, 245, 245);
     border: $loginBorder;
     border-radius: 3px;
 }
 
-.login-btn {
+.signup-user-name::placeholder,
+.signup-password::placeholder {
+    font-size: $fontSize12;
+    font-weight: 400;
+    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.signup-btn {
+    margin: 20px;
     background-color: rgb(0, 149, 246);
     font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: $fontSize16;
     color: white;
-    /* font-weight: 600; */
     border-radius: 8px;
     width: 268px;
     height: 32px;
 }
 
-.dont-have-account{
+.have-account {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 41px;
     width: 348px;
-
+    padding: 10px 0;
 }
 
-.dont-have-account-span{
+.have-account-span {
     font-family: $fontFamily;
     font-size: $fontSize14;
     font-weight: $fontWeight400;
+    margin: 15px;
 }
 
-.link-to-signup {
+.link-to-log-in {
     color: rgb(0, 149, 246);
     font-family: $fontFamily;
     font-size: $fontSize14;
     font-weight: $fontWeight600;
 }
 
-
-
 // Style for larger screens 
 @media only screen and (min-width: 460px) {
-    .login-section {
+    .signup-section {
         border: $loginBorder;
     }
 
-    .dont-have-account {
+    .have-account {
         border: $loginBorder;
     }
 }
