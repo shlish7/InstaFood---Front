@@ -138,10 +138,10 @@ export default function AppNavigation({ chat = false }) {
 
           <li className='nav-li explore'><Link className='nav-link' to='/explore'><ExploreIcon />{!narrowBar ? 'Explore' : ''}</Link></li>
           <li className='nav-li reels'><ReelsIcon />{!narrowBar ? 'Reels' : ''}</li>
-           <li className='nav-li'><Link className='nav-link' to='messages'><MessagesIcon />{!narrowBar ? 'Messages' : ''}</Link></li>
+          <li className='nav-li'><Link className='nav-link' to='messages'><MessagesIcon />{!narrowBar ? 'Messages' : ''}</Link></li>
           <li className='nav-li notification'><NotificationsIcon />{!narrowBar ? 'Notifications' : ''}</li>
           <li className='nav-li' onClick={onOpenModal}><CreateIcon />{!narrowBar ? 'Create' : ''}</li>
-          <li className='nav-li'><Link className='nav-link' to={'/' + user._id}><ImageAvatars img={user?.imgUrl || null} avatarHeight='24px !important' avatarWidth='24px !important' />{!narrowBar ? 'Profile' : ''}</Link></li>
+          <li className='nav-li'><Link className='nav-link' to={'/' + user?._id}><ImageAvatars avatarSource = {'navigation-avatar'} img={user?.imgUrl || null}  />{!narrowBar ? 'Profile' : ''}</Link></li>
 
         </ul>
         {openModal ? <CreatePost onCloseModal={onCloseModal} /> : null}

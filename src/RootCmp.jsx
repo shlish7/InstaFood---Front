@@ -12,6 +12,7 @@ export function RootCmp() {
   const location = useLocation()
   console.log('location', location)
 
+
   return (
     <>
       {
@@ -21,11 +22,10 @@ export function RootCmp() {
             <Route path='/signup' element={<SignupPage />} />
           </Routes>
           :
-
           <div className='instafood-app'>
             {/* <AppHeader /> */}
-            <AppNavigation class='navigation' />
-            <main class='main-page'>
+            <AppNavigation className='navigation' />
+            <main className='main-page'>
               <Routes>
                 <Route path='/' element={<HomePage />}>
                   <Route path='/p/:pId?' element={<FeedItemFullScreen />} />

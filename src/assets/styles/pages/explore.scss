@@ -8,14 +8,14 @@
 .explore-page {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width:100%;
 
 }
 
 
 .explore-container {
-    margin-top: 40px;
+    margin: 4px;
     min-width: 60%;
     max-width: 963px;
 }
@@ -89,4 +89,13 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+@media only screen and (min-width:460px){
+    .explore-container {
+        height: none;
+        margin-top: 40px;
+        min-width: 60%;
+        max-width: 963px;
+    }
 }

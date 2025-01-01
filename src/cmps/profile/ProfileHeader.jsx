@@ -52,15 +52,14 @@ export default function ProfileHeader({ feedItems, user, onUserUnfollowed }) {
         <section className="profile-pic">
           <ImageAvatars
             img={user?.imgUrl}
-            avatarHeight="150px !important"
-            avatarWidth="150px !important"
+            avatarSource = {'profile-header-avatar'}
           />
         </section>
         <section className="header-btns">
           <section className="profile-link-buttons">
             <span className="user-name-profile-header">{user?.username}</span>
             <Link className="profile-link-button">Edit Profile</Link>
-            <Link className="profile-link-button">View Archive</Link>
+            {/* <Link className="profile-link-button">View Archive</Link> */}
           </section>
           <section className="profile-follows-lists">
             <section className="profile-follows-post">

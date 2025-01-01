@@ -30,7 +30,7 @@ export default function ProfileBody({ feedItems, user, onOpenFeedItem }) {
   }
 
   return (
-    <div>
+    <div className='profile-body'>
       <section className="tabs-section">
         <Tabs value={activeTab} onChange={handleTabChange}
           className="custom-tabs"
