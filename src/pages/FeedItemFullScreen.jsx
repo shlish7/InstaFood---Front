@@ -45,7 +45,7 @@ export function FeedItemFullScreen() {
       }
       if (event.key === 'Enter' && !event.shiftKey) {
         navigate(-1)
-   
+
       }
     }
     

@@ -33,7 +33,6 @@ export function ButtonsView({ feedItem, isImgDoubleClicked, onChangeLike, onOpen
           }}/>
         <ShareIcon />
       </section>
-      
       <section className="feed-item-img-save-icon">
         {isSaved ? <PressedSaveIcon onClick={onSaveItem} /> : <SaveIcon onClick={onSaveItem} />}
       </section>

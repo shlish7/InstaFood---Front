@@ -1,4 +1,3 @@
-
 .instafood-home-page {
     display: grid;
     // grid-template-columns: 1fr 319px;
@@ -7,28 +6,21 @@
     grid-template-areas:
         "main-header right-aside"
         "main-feed right-aside";
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    padding-top: 0;
-    justify-items: center;
+    justify-items: left;
 }
 
 .home-header {
     grid-area: main-header;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    // width: 67%;
     margin-top: 16px;
 }
 
 .home-right-bar {
-    grid-area: right-aside;
-    height: 100vh;
-    width:100%;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 16px;
+    display: none;
 }
 
 .home-feed {
@@ -37,15 +29,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
-    // width: 67%;
+    // margin-top: 25px;
+    width: 100vw;
+    height: 100%;
 
 }
 
 
 
 .home-feed-container {
-    width: 468px;
+    width: 100%;
+    height: 100%;
     border-bottom: 1px solid rgb(219, 219, 219);
     margin-top: 10px;
 
@@ -66,10 +60,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px 10px;
     margin-top: 10px;
-
-
 }
 
 .avatar-and-user-details {
@@ -77,6 +69,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 5px 0;
+    gap:8px;
 }
 
 .home-page-img-title {
@@ -97,7 +90,8 @@
 .feed-item-img-icons {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0 10px 0;
+    padding: 10px;
+    width:100%
 }
 
 .feed-item-img-icons-group {
@@ -172,15 +166,15 @@ a {
     font-family: $fontFamily;
     font-size: $fontSize14;
     font-weight: 600;
-    padding: 5px 0;
+    padding: 5px 10px;
 }
 
 .home-img-description-container {
     display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap;  
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 100%;
-    padding: 5px 0;
+    padding: 5px 10px;
 }
 
 .home-img-user-name {
@@ -188,7 +182,7 @@ a {
     font-size: $fontSize14;
     font-weight: 600;
     min-width: fit-content;
-    margin-right: 5px; 
+    margin-right: 5px;
     align-self: flex-start;
 }
 
@@ -198,7 +192,7 @@ a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .home-img-detailes.expanded {
@@ -214,3 +208,271 @@ a {
     font-size: $fontSize14;
     text-transform: lowercase;
 }
+.home-comments-container{
+    padding: 0 10px;
+
+}
+
+@media only screen and (min-width:460px) {
+
+    .instafood-home-page {
+        justify-items: center;
+
+    }
+    .home-right-bar {
+        grid-area: right-aside;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 16px;
+    }
+
+    .home-header {
+        justify-content: flex-end;
+    }
+
+
+    .home-feed {
+        margin-top: 25px;
+        width: 470px;
+    }
+
+    .img-title-container {
+        padding: 5px 0;
+    }
+
+    .feed-item-img-icons {
+        padding: 10px 0;
+    }
+    .like-count-container {
+        padding: 5px 0;
+    }
+
+    .home-img-description-container {
+        padding: 5px 0;
+    }
+    .home-comments-container{
+        padding: 0;
+    
+    }
+}
+
+
+
+
+// .instafood-home-page {
+//     display: grid;
+//     // grid-template-columns: 1fr 319px;
+//     grid-template-columns: 10fr 4fr;
+//     grid-template-rows: 1fr 9fr;
+//     grid-template-areas:
+//         "main-header right-aside"
+//         "main-feed right-aside";
+//     height: 100vh;
+//     width: 100%;
+//     padding-top: 0;
+//     justify-items: center;
+// }
+
+// .home-header {
+//     grid-area: main-header;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//     // width: 67%;
+//     margin-top: 16px;
+// }
+
+// .home-right-bar {
+//     grid-area: right-aside;
+//     height: 100vh;
+//     width:100%;
+//     display: flex;
+//     justify-content: flex-start;
+//     margin-top: 16px;
+// }
+
+// .home-feed {
+//     grid-area: main-feed;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 25px;
+//     // width: 67%;
+
+// }
+
+
+
+// .home-feed-container {
+//     width: 468px;
+//     border-bottom: 1px solid rgb(219, 219, 219);
+//     margin-top: 10px;
+
+
+// }
+
+
+// .instagram-logo {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100px;
+//     width: 100%;
+
+// }
+
+// .img-title-container {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 5px 0;
+//     margin-top: 10px;
+
+
+// }
+
+// .avatar-and-user-details {
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     padding: 5px 0;
+// }
+
+// .home-page-img-title {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+
+// }
+
+
+// .home-user-title-container {
+//     display: flex;
+//     align-items: center;
+//     gap: 4px;
+// }
+
+
+// .feed-item-img-icons {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 10px 0 10px 0;
+// }
+
+// .feed-item-img-icons-group {
+//     display: flex;
+//     justify-content: flex-start;
+//     gap: 16px;
+// }
+
+// .home-title-user-name {
+//     font-family: $fontFamily;
+//     font-size: $fontSize14;
+//     font-weight: $fontWeight600;
+// }
+
+// .home-title-dot {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     color: $greyClr;
+//     height: 18px;
+//     width: 6.5px;
+//     font-family: $fontFamily;
+//     font-size: $fontSize14;
+//     font-weight: $fontWeight400;
+//     height: 18px;
+//     line-height: 18px;
+// }
+
+// .home-title-verified {
+//     width: auto;
+//     height: auto;
+// }
+
+// .home-posted-time {
+//     color: $greyClr;
+//     font-family: $fontFamily;
+//     font-size: $fontSize14;
+//     font-weight: $fontWeight400;
+//     height: auto;
+//     line-height: 18px;
+// }
+
+// .home-more-options-icon {
+//     display: flex;
+//     align-items: center;
+// }
+
+// .home-title-details {
+//     font-family: $fontFamily;
+//     font-size: $fontSize12;
+//     font-weight: $fontWeight400;
+//     height: 18px;
+//     line-height: 16px;
+// }
+
+// .home-title-caption {
+//     font-family: $fontFamily;
+//     font-size: $fontSize12;
+//     font-weight: $fontWeight400;
+//     height: 18px;
+//     line-height: 16px;
+// }
+
+// a {
+//     text-decoration: none;
+
+// }
+
+// .like-count-container {
+//     display: flex;
+//     gap: 4px;
+//     font-family: $fontFamily;
+//     font-size: $fontSize14;
+//     font-weight: 600;
+//     padding: 5px 0;
+// }
+
+// .home-img-description-container {
+//     display: flex;
+//     flex-direction: row; 
+//     flex-wrap: nowrap;  
+//     width: 100%;
+//     padding: 5px 0;
+// }
+
+// .home-img-user-name {
+//     font-family: $fontFamily;
+//     font-size: $fontSize14;
+//     font-weight: 600;
+//     min-width: fit-content;
+//     margin-right: 5px; 
+//     align-self: flex-start;
+// }
+
+
+// .home-img-detailes {
+//     display: inline;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     flex-grow: 1; 
+// }
+
+// .home-img-detailes.expanded {
+//     white-space: normal;
+// }
+
+// .toggle-btn {
+//     background: none;
+//     border: none;
+//     color: lightgray;
+//     cursor: pointer;
+//     padding: 0;
+//     font-size: $fontSize14;
+//     text-transform: lowercase;
+// }

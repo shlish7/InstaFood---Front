@@ -11,15 +11,15 @@
     width:100%;
 }
 
-.carousel-full-item-screen-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-}
+// .carousel-full-item-screen-container {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     height: 100%;
+//     width:100%;
+//     justify-content: center;
+//     align-items: center;
+// }
 
 
 
@@ -49,35 +49,7 @@
 
 }
 
-.carousel-right-arrow {
-    right: 5px;
-}
 
-.carousel-left-arrow {
-    left: 5px;
-}
-
-.carousel-right-btn {
-    align-items: center;
-    background: transparent;
-    border: none;
-    display: flex;
-    justify-content: center;
-    padding: 8px;
-    line-height: 18px;
-    /* margin-right: 100px; */
-}
-
-.carousel-left-btn {
-    align-items: center;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 8px;
-    line-height: 18px;
-}
 
 .carousel-main-frame {
     position: relative;
@@ -137,33 +109,67 @@
     cursor: pointer;
 }
 
-.right-arrow-icon {
-    color: black;
-    transform: rotate(90deg);
-    position: absolute;
-    fill: transparent;
-    /* Ensure the fill color is applied */
-    stroke: black;
-    /* Change to desired color */
-    stroke-width: 2px;
-    font-weight: bold;
-    height: 16px;
-    width: 12px;
-    /* opacity: 0; */
-    background-color: transparent;
 
-}
 
-.left-arrow-icon {
-    /* background-color: white; */
-    color: black;
-    transform: rotate(-90deg);
-    position: absolute;
-    stroke: black;
-    /* Change to desired color */
-    stroke-width: 2px;
-    font-weight: bold;
-    height: 16px;
-    width: 12px;
-    background-color: transparent;
+@media only screen and (min-width:460px) {
+    .right-arrow-icon {
+        color: black;
+        transform: rotate(90deg);
+        position: absolute;
+        fill: transparent;
+        /* Ensure the fill color is applied */
+        stroke: black;
+        /* Change to desired color */
+        stroke-width: 2px;
+        font-weight: bold;
+        height: 16px;
+        width: 12px;
+        /* opacity: 0; */
+        background-color: transparent;
+    
+    }
+    
+    .left-arrow-icon {
+        /* background-color: white; */
+        color: black;
+        transform: rotate(-90deg);
+        position: absolute;
+        stroke: black;
+        /* Change to desired color */
+        stroke-width: 2px;
+        font-weight: bold;
+        height: 16px;
+        width: 12px;
+        background-color: transparent;
+    }
+
+    .carousel-right-arrow {
+        right: 5px;
+    }
+    
+    .carousel-left-arrow {
+        left: 5px;
+    }
+    
+    .carousel-right-btn {
+        align-items: center;
+        background: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        line-height: 18px;
+        /* margin-right: 100px; */
+    }
+    
+    .carousel-left-btn {
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        line-height: 18px;
+    }
 }
