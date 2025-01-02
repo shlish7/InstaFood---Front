@@ -125,7 +125,7 @@ export default function AppNavigation({ chat = false }) {
           </section>
           <div className="nav-bar-subcontainer">
             <section className="left-nav-bar-main">
-              <li className='nav-li '><Link className='nav-link' to='/'><HomeIcon /><div className='nav-option-name'>Search</div></Link></li>
+              <li className='nav-li '><Link className='nav-link' to='/'><HomeIcon /><div className='nav-option-name'>Home</div></Link></li>
               <li className={!narrowBar ? 'nav-li search' : 'nav-li-no-gap search'}
                 onClick={onOpenSearchBar}>
                 {
@@ -143,8 +143,8 @@ export default function AppNavigation({ chat = false }) {
               <li className='nav-li'><Link className='nav-link' to={'/' + user?._id}><ImageAvatars avatarSource={'navigation-avatar'} img={user?.imgUrl || null} /><div className='nav-option-name'>Profile</div></Link></li>
             </section>
             <section className='left-nav-bar-footer'>
-              <li className='nav-li reels'><ThreadsIcon /><div className='nav-option-name'>Threads</div></li>
-              <li className='nav-li reels'><MoreIcon /><div className='nav-option-name'>More</div></li>
+              <li className='nav-li threads'><ThreadsIcon /><div className='nav-option-name'>Threads</div></li>
+              <li className='nav-li more'><MoreIcon /><div className='nav-option-name'>More</div></li>
             </section>
           </div>
 
