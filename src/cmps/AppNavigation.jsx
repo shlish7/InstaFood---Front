@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import HomeIcon from '../assets/svg/home/home-icon.svg?react'
 import HomeBoldIcon from '../assets/svg/home/home-bold-icon.svg?react'
 
-// import InstagramIconLogo from '../assets/svg/instagram-side-bar-logo.svg?react'
+// import InstagramIconLogo from '../assets/svg/instagram-nav-bar-logo.svg?react'
 import InstagramIconLogo from '../assets/svg/InstaOr1.svg?react'
 import InstagramNarrowLogo from '../assets/svg/instagram-icon-logo.svg?react'
 import SearchIcon from '../assets/svg/search-icon.svg?react'
@@ -109,59 +109,51 @@ export default function AppNavigation({ chat = false }) {
 
   return (
     <>
-      <section className={!narrowBar ? 'wide-side-bar-container' : 'narrow-side-bar-container'} >
-        <ul className={narrowBar ?'side-bar-ul-narrow' : 'side-bar-ul-wide'}>
-          {(!narrowBar ?
-            (
-              <section className='instagram-logo insta-logo' >
-                <InstagramIconLogo />
+      <section className='nav-bar-container' >
+        <ul className='nav-bar-ul'>
+          <section className="left-nav-bar-header">
+            {(!narrowBar ?
+              (
+                <section className='insta-logo' >
+                  <InstagramIconLogo />
+                </section>)
+              :
+              (<section className='insta-logo' >
+                <InstagramNarrowLogo />
               </section>)
-            :
-            (<section className='instagram-narrow-logo insta-logo' >
-              <InstagramNarrowLogo />
-            </section>)
-          )}
-
-
-          <li className='nav-li '><Link className='nav-link' to='/'><HomeIcon />{!narrowBar ? 'Home' : ''}</Link></li>
-          
-
-          <li className={!narrowBar ? 'nav-li search' : 'nav-li-no-gap search'}
-            onClick={onOpenSearchBar}>
-            {
-              openSerachBar ?
-                <div ref={searchBarRef}>
-                  <SearchBar />
-                </div> : ''
-            }
-            <SearchIcon />{!narrowBar ? 'Search' : ''}</li>
-
-          <li className='nav-li explore'><Link className='nav-link' to='/explore'><ExploreIcon />{!narrowBar ? 'Explore' : ''}</Link></li>
-          <li className='nav-li reels'><ReelsIcon />{!narrowBar ? 'Reels' : ''}</li>
-          <li className='nav-li'><Link className='nav-link' to='messages'><MessagesIcon />{!narrowBar ? 'Messages' : ''}</Link></li>
-          <li className='nav-li notification'><NotificationsIcon />{!narrowBar ? 'Notifications' : ''}</li>
-          <li className='nav-li' onClick={onOpenModal}><CreateIcon />{!narrowBar ? 'Create' : ''}</li>
-          <li className='nav-li'><Link className='nav-link' to={'/' + user?._id}><ImageAvatars avatarSource = {'navigation-avatar'} img={user?.imgUrl || null}  />{!narrowBar ? 'Profile' : ''}</Link></li>
+            )}
+          </section>
+          <div className="nav-bar-subcontainer">
+            <section className="left-nav-bar-main">
+              <li className='nav-li '><Link className='nav-link' to='/'><HomeIcon /><div className='nav-option-name'>Search</div></Link></li>
+              <li className={!narrowBar ? 'nav-li search' : 'nav-li-no-gap search'}
+                onClick={onOpenSearchBar}>
+                {
+                  openSerachBar ?
+                    <div ref={searchBarRef}>
+                      <SearchBar />
+                    </div> : ''
+                }
+                <SearchIcon /><div className='nav-option-name'>Search</div></li>
+              <li className='nav-li explore'><Link className='nav-link' to='/explore'><ExploreIcon /><div className='nav-option-name'>Explore</div></Link></li>
+              <li className='nav-li reels'><ReelsIcon /><div className='nav-option-name'>Reels</div></li>
+              <li className='nav-li'><Link className='nav-link' to='messages'><MessagesIcon /><div className='nav-option-name'>Messages</div></Link></li>
+              <li className='nav-li notification'><NotificationsIcon /><div className='nav-option-name'>Notifications</div></li>
+              <li className='nav-li' onClick={onOpenModal}><CreateIcon /><div className='nav-option-name'>Create</div></li>
+              <li className='nav-li'><Link className='nav-link' to={'/' + user?._id}><ImageAvatars avatarSource={'navigation-avatar'} img={user?.imgUrl || null} /><div className='nav-option-name'>Profile</div></Link></li>
+            </section>
+            <section className='left-nav-bar-footer'>
+              <li className='nav-li reels'><ThreadsIcon /><div className='nav-option-name'>Threads</div></li>
+              <li className='nav-li reels'><MoreIcon /><div className='nav-option-name'>More</div></li>
+            </section>
+          </div>
 
         </ul>
         {openModal ? <CreatePost onCloseModal={onCloseModal} /> : null}
-
-        <section className='left-side-bar-footer'>
-          <section className='side-bar-botton-icons'>
-            <ThreadsIcon />
-            {!narrowBar ? <span className='span-option'>Threads</span> : null}
-          </section>
-          <section className='side-bar-botton-icons'>
-            <MoreIcon />
-            {!narrowBar ? <span className='span-option'>More</span> : null}
-          </section>
-
-        </section>
       </section>
-
-
-
     </>
 
   )
 }
+
+
