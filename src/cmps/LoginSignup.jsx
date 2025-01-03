@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { userService } from '../services/user.service.remote.js'
 import { useSelector } from 'react-redux';
 import { ImgUploader } from './ImgUploader.jsx';
+import InstafoodIconLogo from '../assets/svg/InstaOr1.svg?react'
+import CloseModalIcon  from '../assets/svg/close-btn-white.svg?react'
+
 
 export function LoginSignup(props) {
     const users = useSelector(storeState => storeState.userModule.users)
@@ -48,7 +51,9 @@ export function LoginSignup(props) {
     }
 
     return (
-        <div className="login-page">
+        <>
+  
+        {<div className="login-page">
             <p>
                 <button className="btn-link" onClick={toggleSignup}>Go To {!isSignup ? 'Signup' : 'Login'}</button>
             </p>
@@ -100,6 +105,20 @@ export function LoginSignup(props) {
                     </form>
                 }
             </div>
-        </div>
+        </div> }
+
+{/* <div className="switch-user-modal">
+    <CloseModalIcon className='close-modal'/>
+<form action="submit" className="switch-user-form">
+  <section className="switch-user-section">
+  <InstafoodIconLogo className='switch-user-instafood-logo'/>
+
+    <input type="text" className='switch-user-name' placeholder='Phone number, username, or email' />
+    <input type="password" className='switch-password' placeholder='Password' />
+    <button className="login-btn">Log in</button>
+  </section>
+</form>
+</div> */}
+</>
     )
 }

@@ -6,8 +6,11 @@ import ImageAvatars from './ImageAvatars'
 import { LoginSignup } from './LoginSignup'
 import { login, logout, signup } from '../store/user.actions.js'
 import Suggestion from './Suggestion.jsx'
+import SwitchUser from './Login/SwitchUser.jsx'
 
 export function RightSideBar() {
+    const [switchUser, setSwitchUser] = useState(false)
+
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)    
     const users = useSelector(storeState => storeState?.userModule?.users)
@@ -34,6 +37,7 @@ export function RightSideBar() {
 
     async function onLogout() {
         try {
+          setSwitchUser(true)
           await logout()
           showSuccessMsg(`Bye now`)
         } catch (err) {
@@ -61,6 +65,12 @@ export function RightSideBar() {
       }
     }
 
+    function onCloseModal(){
+      console.log('test',);
+      setSwitchUser(false)
+
+    }
+
     return (
         <section className="signup-signin">
           {user &&
@@ -82,6 +92,8 @@ export function RightSideBar() {
           }
 
           <Suggestion user={user} />
+
+          {switchUser && <SwitchUser onCloseModal={onCloseModal}/>}
         </section>  
     )
 }
