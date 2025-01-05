@@ -65,6 +65,11 @@ export function RightSideBar() {
       }
     }
 
+    function onOpenModal(){
+      console.log('test',);
+      setSwitchUser(true)
+
+    }
     function onCloseModal(){
       console.log('test',);
       setSwitchUser(false)
@@ -81,7 +86,7 @@ export function RightSideBar() {
                 <span className='user-info-first-name'>{user.fullname}</span>
               </section>
 
-              <span className='switch-user-btn' onClick={onLogout}>Switch</span>
+              <span className='switch-user-btn' onClick={onOpenModal}>Switch</span>
             </span>
           }
 
@@ -93,7 +98,7 @@ export function RightSideBar() {
 
           <Suggestion user={user} />
 
-          {switchUser && <SwitchUser onCloseModal={onCloseModal}/>}
+          {switchUser && <SwitchUser onLogin={onLogin} onCloseModal={onCloseModal}/>}
         </section>  
     )
 }

@@ -52,7 +52,7 @@ export function LoginSignup(props) {
 
     return (
         <>
-  
+{/*   
         {<div className="login-page">
             <p>
                 <button className="btn-link" onClick={toggleSignup}>Go To {!isSignup ? 'Signup' : 'Login'}</button>
@@ -105,7 +105,7 @@ export function LoginSignup(props) {
                     </form>
                 }
             </div>
-        </div> }
+        </div> } */}
 
 {/* <div className="switch-user-modal">
     <CloseModalIcon className='close-modal'/>

@@ -3,7 +3,7 @@ import InstafoodIconLogo from '../../assets/svg/InstaOr1.svg?react'
 import CloseModalIcon from '../../assets/svg/close-btn-white.svg?react'
 import { login } from '../../store/user.actions'
 
-export default function SwitchUser({ onCloseModal }) {
+export default function SwitchUser({ onCloseModal, onLogin }) {
 
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -19,6 +19,7 @@ export default function SwitchUser({ onCloseModal }) {
             const loginResult = await login({username, password})
             console.log('loginResult',loginResult);
             onCloseModal()
+            onLogin()
 
         } catch (err) {
             console.log('Faild to log in:', err);
