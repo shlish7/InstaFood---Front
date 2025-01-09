@@ -8,6 +8,7 @@ import { FeedItemDescription } from './FeedItemDescription.jsx';
 import { CommnetsView } from './CommnetsView.jsx';
 import { FeedItemCreatorDetails } from './FeedItemCreatorDetails.jsx';
 import { updateFeedItem } from '../../store/feedItem.actions';
+import SwiperCmp from '../../assets/styles/cmps/SwiperCmp.jsx';
 
 export function FeedItem({ feedItem, onOpenFeedItem, handleCommentSubmit }) {
 
@@ -41,7 +42,8 @@ export function FeedItem({ feedItem, onOpenFeedItem, handleCommentSubmit }) {
   return (
       <section className="home-feed-container">
         <FeedItemCreatorDetails feedItem={feedItem} user={creator}/>
-        <Carousel feedItem={feedItem} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked} fullScreen={false}/>
+        {/* <Carousel feedItem={feedItem} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked} fullScreen={false}/> */}
+        <SwiperCmp feedItem={feedItem} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked} fullScreen={false}/>
         <ButtonsView feedItem={feedItem} isImgDoubleClicked={isImgDoubleClicked} onChangeLike={onChangeLike} onOpenFeedItem={onOpenFeedItem}/>
         {feedItem?.likes?.length > 0 && <LikesCount feedItem={feedItem}/>}
         <FeedItemDescription feedItem={feedItem} user={creator}/>

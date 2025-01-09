@@ -12,6 +12,7 @@ import { userService } from '../services/user.service.remote.js';
 import Verified from "../assets/svg/verified.svg?react";
 import { useSelector } from 'react-redux';
 import { loadFeedItem, updateFeedItem } from '../store/feedItem.actions.js';
+import SwiperCmp from '../assets/styles/cmps/SwiperCmp.jsx';
 
 export function FeedItemFullScreen() {
   const { pId } = useParams()
@@ -20,15 +21,15 @@ export function FeedItemFullScreen() {
 
   const feedItem = useSelector(storeState => storeState.feedItemModule.feedItem)
 
-  const [ isImgDoubleClicked, setIsImgDoubleClicked ] = useState(feedItem?.likes?.some(like => like.userId === user?._id))
-  const [ onCloseFeedItemFullScreen, setOnCloseFeedItemFullScreen ] = useState();
+  const [isImgDoubleClicked, setIsImgDoubleClicked] = useState(feedItem?.likes?.some(like => like.userId === user?._id))
+  const [onCloseFeedItemFullScreen, setOnCloseFeedItemFullScreen] = useState();
 
   function onDoubleClicked() {
     onChangeLike()
-    setIsImgDoubleClicked(prev => !prev)   
+    setIsImgDoubleClicked(prev => !prev)
   }
 
-  async function onChangeLike(){
+  async function onChangeLike() {
     const updatedLikes = feedItem?.likes?.some(like => like.userId === user?._id)
       ? feedItem?.likes?.filter(like => like.userId !== user?._id)
       : [...feedItem.likes, { userId: user?._id }]
@@ -48,7 +49,7 @@ export function FeedItemFullScreen() {
 
       }
     }
-    
+
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
@@ -79,38 +80,41 @@ export function FeedItemFullScreen() {
     } catch {
     }
   }
-  
+
   function onNavigateBack() {
     navigate(-1)
   }
 
-  function onNavigateToProfile(){
-    navigate("/"+user?._id)
+  function onNavigateToProfile() {
+    navigate("/" + user?._id)
   }
 
-  console.log('feedItem?.likes?.length',feedItem?.likes?.length);
-  console.log('feedItem?.likes?.userId',feedItem?.likes);
+  console.log('feedItem?.likes?.length', feedItem?.likes?.length);
+  console.log('feedItem?.likes?.userId', feedItem?.likes);
 
   return (
     <>
       <CloseModal className='close-modal-icon-feed-item-full-screen' onClick={onNavigateBack} />
       <section className="feed-item-container-full-screen">
-        { feedItem && <Carousel feedItem={feedItem} fullScreen={true} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked}  /> }
+        {feedItem &&
+          // <Carousel feedItem={feedItem} fullScreen={true} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked}  /> 
+          <SwiperCmp feedItem={feedItem} fullScreen={true} onDoubleClicked={onDoubleClicked} isImgDoubleClicked={isImgDoubleClicked} />
+        }
         <section className="full-screen-comments">
           <section className="full-screen-comment-user-details" onClick={onNavigateToProfile}>
-            { user?.imgUrl && <ImageAvatars img={user.imgUrl} avatarWidth='44px' avatarHeight='44px'/> }
-            { user?.username && <span className="full-screen-comments-user-name">{user.username}</span> }
-            <Verified/>
+            {user?.imgUrl && <ImageAvatars img={user.imgUrl} avatarWidth='44px' avatarHeight='44px' />}
+            {user?.username && <span className="full-screen-comments-user-name">{user.username}</span>}
+            <Verified />
           </section>
           <section className="scrollable-comments">
-          { feedItem && <CommentsIndex feedItem= {feedItem}/> }
+            {feedItem && <CommentsIndex feedItem={feedItem} />}
           </section>
           <section className="full-screen-button-and-likes">
-            <ButtonsView feedItem={feedItem} isImgDoubleClicked={isImgDoubleClicked} onChangeLike={onChangeLike}/>
-            { feedItem?.likes?.length > 0 && <LikesCount feedItem={feedItem}/> }
-          </section>     
+            <ButtonsView feedItem={feedItem} isImgDoubleClicked={isImgDoubleClicked} onChangeLike={onChangeLike} />
+            {feedItem?.likes?.length > 0 && <LikesCount feedItem={feedItem} />}
+          </section>
           <section className="full-screen-new-comment">
-            <NewComment  fullScreen={true}/>
+            <NewComment fullScreen={true} />
           </section>
         </section>
       </section>

@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import InstafoodIconLogo from '../../assets/svg/InstaOr1.svg?react'
 import CloseModalIcon from '../../assets/svg/close-btn-white.svg?react'
 import { login } from '../../store/user.actions'
+import { useNavigate } from 'react-router'
 
 export default function SwitchUser({ onCloseModal, onLogin }) {
 
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
+    const navigate = useNavigate()
 
     async function onLoginUser(ev){
         ev.stopPropagation()
@@ -19,8 +21,7 @@ export default function SwitchUser({ onCloseModal, onLogin }) {
             const loginResult = await login({username, password})
             console.log('loginResult',loginResult);
             onCloseModal()
-            onLogin()
-
+            navigate('/')
         } catch (err) {
             console.log('Faild to log in:', err);
 
