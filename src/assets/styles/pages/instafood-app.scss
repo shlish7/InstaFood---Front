@@ -10,6 +10,34 @@ body,
 html {
     overflow-x: hidden;
 }
+.instafood-app {
+    width: 100vw;
+    height: 100svh;
+    display: grid;
+    grid-template-rows: 1fr 48px;
+    grid-template-areas:
+        "main-header"
+        "bottom";
+}
+
+.navigation {
+    grid-area: bottom;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2px;
+    height: 48px;
+    width: 100vw; 
+}
+
+.main-page{
+    grid-area: main-header;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+}
 
 @media only screen and (min-width:460px){
 
@@ -33,65 +61,14 @@ html {
         }
 
         .main-page{
-            height: 100vh;
-            grid-area: main-header;
-            display: flex;
-            justify-content: center;
-            overflow-y: scroll;
-            width:100%;
-
-        }
-}
-
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: $fontFamily;
-
-}
-
-body,
-html {
-    overflow-x: hidden;
-}
-
-@media only screen and (max-width:461px){
-
-        .instafood-app {
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            grid-template-rows: 1fr 48px;
-            grid-template-areas:
-                "main-header"
-                "bottom";
-        }
-
-        .navigation {
-            grid-area: bottom;
-            display: flex;
-            justify-content: space-between;
-            padding-left: 2px;
-            height: 48px;
-            width: 100vw;
-            
-        }
-
-        .main-page{
-            grid-area: main-header;
-            display: flex;
-            justify-content: center;
-            overflow-y: scroll;
             height: 100%;
-            width: 100vw;
-            overflow-x: hidden;
-
-
-
+            grid-area: main-header;
+            display: flex;
+            justify-content: center;
+            overflow-y: scroll;
         }
 }
+
 
 
 
