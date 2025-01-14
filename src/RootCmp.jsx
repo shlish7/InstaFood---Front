@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router'
+import { Routes, Route, useLocation, useNavigate } from 'react-router'
 import { HomePage } from './pages/HomePage'
 import { Profile } from './pages/Profile.jsx'
 import { FeedItemFullScreen } from './pages/FeedItemFullScreen.jsx'
@@ -7,11 +7,21 @@ import { SignupPage } from './pages/SignupPage.jsx'
 import Explore from './pages/Explore.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 import AppNavigation from './cmps/AppNavigation.jsx'
+import { userService } from './services/user.service.remote.js'
+import { useEffect } from 'react'
 
 export function RootCmp() {
+  const navigate = useNavigate()
+
   const location = useLocation()
   console.log('location', location)
 
+  useEffect(() => {
+
+    const loggedIn = userService.getLoggedinUser()
+    console.log('loggedIn',)
+    loggedIn ? navigate("/") : navigate("/login")
+  }, []);
 
   return (
     <>

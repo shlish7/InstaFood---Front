@@ -9,7 +9,7 @@ export const userService = {
   logout,
   signup,
   getLoggedinUser,
-  saveLocalUser,
+  saveLoggedinUser,
   getUsers,
   getById,
   remove,
@@ -29,57 +29,45 @@ async function getUsers(filterBy) {
     console.log("failed getting users")
   }
 
-  // return httpService.query('user')
-  // return httpService.get(`user`)
 }
 
-// async function getById(userId) {
-//   const users = await getUsers()
-//     const user = await httpService.get(STORAGE_KEY, userId)
-//     // const user = await httpService.get(`user/${userId}`)
-//     return user
-// }
 
 async function getById(userId) {
   const user = await httpService.get(`user/${userId}`)
-  // const user = await httpService.get(`user/673b49605e4aea9bf62a57d6`)
   return user
 }
 
 function remove(userId) {
   return httpService.remove(STORAGE_KEY, userId)
-  // return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {
   console.log('updated user service ', user);
   const savedUser = await httpService.put(`user/${user._id}`, user)
-  // const user = await httpService.put(`user/${_id}`, {_id, score})
 
   // When admin updates other user's details, do not update loggedinUser
-  if (getLoggedinUser()._id === user._id) saveLocalUser(user)
+  if (getLoggedinUser()._id === user._id) saveLoggedinUser(user)
   return savedUser
 }
 
 async function login(userCred) {
-  console.log('userCred Service',userCred);
+  console.log('userCred Service',userCred)
   const user = await httpService.post('auth/login', userCred)
-  if (user) return saveLocalUser(user)
+  if (user) return saveLoggedinUser(user)
 }
 
 async function signup(userCred) {
   if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-  // const user = await httpService.post('user', userCred)
   const user = await httpService.post('auth/signup', userCred)
-  return saveLocalUser(user)
+  return saveLoggedinUser(user)
 }
 
 async function logout() {
   sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-  // return await httpService.post('auth/logout')
+  return await httpService.post('auth/logout')
 }
 
-function saveLocalUser(user) {
+function saveLoggedinUser(user) {
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
 }
@@ -96,12 +84,6 @@ function getEmptyUser() {
     imgUrl: '',
   }
 }
-
-// ;(async ()=>{
-//     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})
-//     await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true})
-//     await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000})
-// })()
 
 const mockUsers = [
   {
